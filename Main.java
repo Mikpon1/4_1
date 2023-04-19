@@ -11,9 +11,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args)  {
     Scanner sc = new Scanner(System.in);
-    int exception;
+    int exception; 
     System.out.println("1-Dodaj studenta");
     exception = sc.nextInt();
     
