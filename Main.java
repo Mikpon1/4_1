@@ -7,39 +7,46 @@ Kod bazowy programu Commit4_0:
 • Klasa Student reprezentuje pojedynczego studenta (Imię, Wiek).
 */
 
-import java.io.IOException;
 import java.util.Scanner;
+import java.io.IOException;
 
 class Main {
-  public static void main(String[] args)  {
-    Scanner sc = new Scanner(System.in);
-    int exception; 
-    System.out.println("1-Dodaj studenta");
-    exception = sc.nextInt();
+  public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+    int menu;
+    System.out.println("1 - Dodawanie nowego studenta"+ "\n" +"2 - Wyświetlanie listy sudentów");
+    menu = sc.nextInt();
     
-    switch(exception) {
-          case 1:
+      switch(menu)  {  
+        case 1:
 
-            System.out.println("Podaj Imię: ");
-            String imie = sc.next();
-            System.out.println("Podaj wiek: ");
-            int wiek = sc.nextInt();
-           
-    try {
-        
+          System.out.println("Podaj Imię: ");
+          String name= sc.next();
+          System.out.println("Podaj wiek: ");
+          int age= sc.nextInt();
+    
+    try{
       Service s = new Service();
-      s.addStudent(new Student(imie, wiek));
-      //s.addStudent(new Student("Janusz", 40));
-
+      s.addStudent(new Student(name, age));
+       
       var students = s.getStudents();
       for(Student current : students) {
         System.out.println(current.ToString());
+      
       }
-    } catch (IOException e) {
+      } catch (IOException e) {
+
+    }
+        case 2:
+          try{
+            Service s = new Service();
+            var students= s.getStudents();
+            for (Student current : students){
+              System.out.println(current.ToString());
+            }
+          }  catch (IOException e) {
+      }
+      }
+      
   }
 }
-}
-} 
-  
-
-
