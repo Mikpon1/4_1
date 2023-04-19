@@ -1,5 +1,5 @@
 /*
-Kod bazowy programu Commit4_0: 
+Kod bazowy programu Commit4_0: /
 • Program dodaje do prostej bazy danych (pliku db.txt) dane odnośnie Studentów.
 • Studenci dodawani są w klasie Main.
 • Wszyscy studenci są wypisywani na końcu klasy Main.
@@ -7,46 +7,39 @@ Kod bazowy programu Commit4_0:
 • Klasa Student reprezentuje pojedynczego studenta (Imię, Wiek).
 */
 
-import java.util.Scanner;
 import java.io.IOException;
+import java.util.Scanner;
 
 class Main {
-  public static void main(String[] args) {
-      Scanner sc=new Scanner(System.in);
-    int menu;
-    System.out.println("1 - Dodawanie nowego studenta"+ "\n" +"2 - Wyświetlanie listy sudentów");
-    menu = sc.nextInt();
+  public static void main(String[] args)  {
+    Scanner sc = new Scanner(System.in);
+    int exception; 
+    System.out.println("1-Dodaj studenta");
+    exception = sc.nextInt();
     
-      switch(menu)  {  
-        case 1:
+    switch(exception) {
+          case 1:
 
-          System.out.println("Podaj Imię: ");
-          String name= sc.next();
-          System.out.println("Podaj wiek: ");
-          int age= sc.nextInt();
-    
-    try{
+            System.out.println("Podaj Imię: ");
+            String imie = sc.next();
+            System.out.println("Podaj wiek: ");
+            int wiek = sc.nextInt();
+           
+    try {
+        
       Service s = new Service();
-      s.addStudent(new Student(name, age));
-       
+      s.addStudent(new Student(imie, wiek));
+      //s.addStudent(new Student("Janusz", 40));
+
       var students = s.getStudents();
       for(Student current : students) {
         System.out.println(current.ToString());
-      
       }
-      } catch (IOException e) {
-
-    }
-        case 2:
-          try{
-            Service s = new Service();
-            var students= s.getStudents();
-            for (Student current : students){
-              System.out.println(current.ToString());
-            }
-          }  catch (IOException e) {
-      }
-      }
-      //gg
+    } catch (IOException e) {
   }
 }
+}
+} 
+  
+
+
