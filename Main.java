@@ -22,21 +22,24 @@ class Main {
 
             System.out.println("Podaj Imię: ");
             String imie = sc.next();
+            System.out.println("Podaj nazwisko: ");
+            String nazwisko = sc.next();
             System.out.println("Podaj wiek: ");
             int wiek = sc.nextInt();
            
     try {
         
       Service s = new Service();
-      s.addStudent(new Student(imie, wiek));
+      s.addStudent(new Student(imie, nazwisko, wiek));
       //s.addStudent(new Student("Janusz", 40));
 
-      var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }
+      //var students = s.getStudents();
+      //for(Student current : students) {
+        //System.out.println(current.ToString());
+      //}
     } catch (IOException e) {
   }
+        break;
       case 2:
         try{
           Service s = new Service();
