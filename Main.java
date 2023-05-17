@@ -14,7 +14,7 @@ class Main {
   public static void main(String[] args)  {
     Scanner sc = new Scanner(System.in);
     int exception; 
-    System.out.println("1-Dodaj studenta");
+    System.out.println("1-Dodaj studenta" + "\n" +  "2-Wyświetl liste");
     exception = sc.nextInt();
     
     switch(exception) {
@@ -37,6 +37,17 @@ class Main {
       }
     } catch (IOException e) {
   }
+      case 2:
+        try{
+          Service s = new Service();
+          var students = s.getStudents();
+          for (Student current : students){
+            System.out.println(current.ToString());
+          }
+          
+          }catch (IOException e){
+          
+          }
 }
 }
 } 
