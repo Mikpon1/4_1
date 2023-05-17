@@ -26,11 +26,13 @@ class Main {
             String nazwisko = sc.next();
             System.out.println("Podaj wiek: ");
             int wiek = sc.nextInt();
+            System.out.println("Podaj datę urodzenia: ");
+            String dataUrodzenia = sc.next();
            
     try {
         
       Service s = new Service();
-      s.addStudent(new Student(imie, nazwisko, wiek));
+      s.addStudent(new Student(imie, nazwisko, wiek, dataUrodzenia));
       //s.addStudent(new Student("Janusz", 40));
 
       //var students = s.getStudents();
